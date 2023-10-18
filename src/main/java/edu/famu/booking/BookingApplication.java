@@ -19,7 +19,7 @@ public class BookingApplication {
         ClassLoader loader = BookingApplication.class.getClassLoader();
 
         //opens the file stored in resources
-        File file = new File(loader.getResource("service-account-key.json").getFile());
+        File file = new File(loader.getResource("serviceAccountKey.json").getFile());
         //reads the data from the file
         FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
 
