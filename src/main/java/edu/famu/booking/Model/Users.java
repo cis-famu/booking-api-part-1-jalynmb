@@ -72,7 +72,7 @@ public class Users {
 
 }
 
-class PaymentInformation {
+public class PaymentInformation {
     private String cardNumber;
     private String expirationDate;
     private String billingAddress;

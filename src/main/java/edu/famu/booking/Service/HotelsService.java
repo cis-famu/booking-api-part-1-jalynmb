@@ -7,10 +7,12 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.firebase.cloud.FirestoreClient;
 import edu.famu.booking.Model.Hotels;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+@Service
 public class HotelsService {
     private Firestore firestore;
 
