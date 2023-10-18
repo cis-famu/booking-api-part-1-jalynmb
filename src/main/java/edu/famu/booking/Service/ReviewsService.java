@@ -25,7 +25,7 @@ public class ReviewsService {
     {
         Reviews reviews = null;
         if(document.exists()){
-            reviews = new Reviews(document.getId(),document.getString("hotelID"),document.getString("userID"),document.getDouble("rating"),document.getString("comment"), document.getTimestamp("date").toProto(), document.getTimestamp("createdAt").toProto());
+            reviews = new Reviews(document.getId(),document.getString("hotelID"),document.getString("userID"),document.getDouble("rating"),document.getString("comment"), document.getTimestamp("date").toProto(), document.getTimestamp("createdAt"));
         }
         return reviews;
     }

@@ -24,8 +24,8 @@ public class HotelsService {
     {
         Hotels hotels = null;
         if(document.exists()){
-            String[] amenities = new String[0];
-            hotels = new Hotels(document.getId(),document.getString("name"),document.getString("description"),document.getString("address"),document.getString("contactInformation"),document.getDouble("rating"), amenities, document.getTimestamp("createdAt").toProto());
+            ArrayList<String> amenities = null;
+            hotels = new Hotels(document.getId(),document.getString("name"),document.getString("description"),document.getString("address"),document.getString("contactInformation"),document.getDouble("rating"), amenities, document.getTimestamp("createdAt"));
         }
         return hotels;
     }

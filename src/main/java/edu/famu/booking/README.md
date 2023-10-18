@@ -34,3 +34,6 @@ All URIs start with: `http://localhost:8080/api/v1`
 
 - Create an endpoint that allows the user to sort descending or ascending by the createdAt. ***(5 points)***
     - Add this by using a query string (ie, `http://localhost:8080/api/v1/product/?sort=asc`)
+
+### Walkthrough
+![](https://i.imgur.com/9KAMTrV.gif)

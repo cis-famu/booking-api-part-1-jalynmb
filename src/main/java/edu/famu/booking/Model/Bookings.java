@@ -2,10 +2,13 @@ package edu.famu.booking.Model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.Timestamps;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
+
+import java.text.ParseException;
 
 @Data
 @AllArgsConstructor
@@ -20,61 +23,21 @@ public class Bookings {
     private double totalPrice;
     private String status;
     private String paymentStatus;
-    private Timestamp createdAt;
+    private com.google.cloud.Timestamp createdAt;
 
-    public String getBookingID() {
-        return bookingID;
+    public void setCheckInDate(Timestamp checkInDate) throws ParseException
+    {
+        this.checkInDate = com.google.cloud.Timestamp.fromProto(Timestamps.parse(String.valueOf((checkInDate)))).toProto();
     }
 
-    public void setBookingID(String bookingID) {
-        this.bookingID = bookingID;
+    public void setCheckOutDate(Timestamp checkOutDate) throws ParseException
+    {
+        this.checkOutDate = com.google.cloud.Timestamp.fromProto(Timestamps.parse(String.valueOf(checkOutDate))).toProto();
     }
 
-    public String getUserID() {
-        return userID;
+    public void setCreatedAt(com.google.cloud.Timestamp createdAt) throws ParseException
+    {
+        this.createdAt = com.google.cloud.Timestamp.fromProto(Timestamps.parse(String.valueOf(createdAt)));
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public Timestamp getCheckInDate() {
-        return checkInDate;
-    }
-
-    public void setCheckInDate(Timestamp checkInDate) {
-        this.checkInDate = checkInDate;
-    }
-
-    public Timestamp getCheckOutDate() {
-        return checkOutDate;
-    }
-
-    public void setCheckOutDate(Timestamp checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(float totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
-    }
 }

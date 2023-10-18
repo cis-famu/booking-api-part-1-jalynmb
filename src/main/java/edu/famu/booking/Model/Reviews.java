@@ -2,10 +2,13 @@ package edu.famu.booking.Model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.Timestamps;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
+
+import java.text.ParseException;
 
 @Data
 @AllArgsConstructor
@@ -19,53 +22,15 @@ public class Reviews {
     private double rating;
     private String comment;
     private Timestamp date;
-    private Timestamp createdAt;
+    private com.google.cloud.Timestamp createdAt;
 
-    public String getReviewID() {
-        return reviewID;
+    public void setDate(com.google.cloud.Timestamp date) throws ParseException
+    {
+        this.date = com.google.cloud.Timestamp.fromProto(Timestamps.parse(String.valueOf(date))).toProto();
     }
 
-    public void setReviewID(String reviewID) {
-        this.reviewID = reviewID;
-    }
-
-    public String getHotelID() {
-        return hotelID;
-    }
-
-    public void setHotelID(String hotelID) {
-        this.hotelID = hotelID;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setCreatedAt(com.google.cloud.Timestamp createdAt) throws ParseException
+    {
+        this.createdAt = com.google.cloud.Timestamp.fromProto(Timestamps.parse(String.valueOf(createdAt)));
     }
 }

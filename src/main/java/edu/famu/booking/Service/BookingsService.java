@@ -24,7 +24,7 @@ public class BookingsService {
     {
         Bookings bookings = null;
         if(document.exists()){
-            bookings = new Bookings(document.getId(),document.getString("userID"),document.getTimestamp("checkInDate").toProto(),document.getTimestamp("checkOutDate").toProto(),document.getDouble("totalPrice"),document.getString("status"),document.getString("paymentStatus"), document.getTimestamp("createdAt").toProto());
+            bookings = new Bookings(document.getId(),document.getString("userID"),document.getTimestamp("checkInDate").toProto(),document.getTimestamp("checkOutDate").toProto(),document.getDouble("totalPrice"),document.getString("status"),document.getString("paymentStatus"), document.getTimestamp("createdAt"));
         }
         return bookings;
     }
