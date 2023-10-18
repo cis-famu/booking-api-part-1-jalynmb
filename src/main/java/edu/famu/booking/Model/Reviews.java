@@ -16,7 +16,7 @@ public class Reviews {
     private @Nullable String reviewID;
     private String hotelID;
     private String userID;
-    private float rating;
+    private double rating;
     private String comment;
     private Timestamp date;
 
@@ -44,7 +44,7 @@ public class Reviews {
         this.userID = userID;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 

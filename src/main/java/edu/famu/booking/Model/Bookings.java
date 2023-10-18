@@ -17,11 +17,11 @@ public class Bookings {
     private String userID;
     private Timestamp checkInDate;
     private Timestamp checkOutDate;
-    private float totalPrice;
+    private double totalPrice;
     private String status;
     private String paymentStatus;
 
-    // Getters and Setters for all fields
+
     public String getBookingID() {
         return bookingID;
     }
@@ -54,7 +54,7 @@ public class Bookings {
         this.checkOutDate = checkOutDate;
     }
 
-    public float getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 

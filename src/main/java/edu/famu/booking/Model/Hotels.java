@@ -1,5 +1,6 @@
 package edu.famu.booking.Model;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.annotation.DocumentId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,8 +19,11 @@ public class Hotels {
     private String description;
     private String address;
     private String contactInformation;
-    private float  rating;
+    private double  rating;
     private String[] amenities;
+
+    public Hotels(String id, String hotelID, String userID, Double rating, String comment, Timestamp date) {
+    }
 
     //hotelID getter and setter
     public void sethotelId(String hotelID)
@@ -60,7 +64,7 @@ public class Hotels {
         this.rating = rating;
     }
 
-    public float getRating()
+    public double getRating()
     {
         return rating;
     }

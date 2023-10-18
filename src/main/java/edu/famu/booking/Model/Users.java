@@ -19,6 +19,9 @@ public class Users {
     private String address; //Address of the user.
     private PaymentInformation paymentInformation; //Payment information of the user, including card number, expiration date, and billing address.
 
+    public Users(String id, String name, String email, String phone, String address) {
+    }
+
     public String getUserID() {
         return userID;
     }

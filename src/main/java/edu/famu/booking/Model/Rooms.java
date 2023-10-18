@@ -17,7 +17,7 @@ public class Rooms {
     private @Nullable String roomID;
     private String hotelID;
     private String roomType;
-    private float price;
+    private double price;
     private int capacity;
     private String description;
     private String availability;
@@ -47,7 +47,7 @@ public class Rooms {
         this.roomType = roomType;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
