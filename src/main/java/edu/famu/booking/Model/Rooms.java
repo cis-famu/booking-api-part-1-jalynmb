@@ -1,6 +1,7 @@
 package edu.famu.booking.Model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
+import com.google.protobuf.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Rooms {
     private String description;
     private String availability;
     private ArrayList<String> images;
+    private Timestamp createdAt;
 
     public String getRoomID() {
         return roomID;

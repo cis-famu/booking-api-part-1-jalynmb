@@ -19,6 +19,7 @@ public class Reviews {
     private double rating;
     private String comment;
     private Timestamp date;
+    private Timestamp createdAt;
 
     public String getReviewID() {
         return reviewID;

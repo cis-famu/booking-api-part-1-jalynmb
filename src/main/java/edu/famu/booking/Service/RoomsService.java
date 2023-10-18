@@ -27,7 +27,7 @@ public class RoomsService {
         if(document.exists()) {
             ArrayList<String> images = null;
             rooms = new Rooms(document.getId(), document.getString("name"), document.getString("email"), document.getDouble("price"), (Integer) document.get("capacity"),
-                    document.getString("description"), document.getString("availability"), images);
+                    document.getString("description"), document.getString("availability"), images, document.getTimestamp("createdAt").toProto());
             images = new ArrayList<>();
         }
         return rooms;

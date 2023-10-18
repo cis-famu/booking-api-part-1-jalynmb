@@ -28,7 +28,7 @@ public class UsersService {
 
         if(document.exists()) {
             ArrayList<String> images = null;
-            users = new Users(document.getId(), document.getString("name"), document.getString("email"), document.getString("phone"), document.getString("address"));
+            users = new Users(document.getId(), document.getString("name"), document.getString("email"), document.getString("phone"), document.getString("address"), document.getTimestamp("createdAt").toProto());
             images = new ArrayList<>();
         }
         return users;

@@ -20,7 +20,7 @@ public class Bookings {
     private double totalPrice;
     private String status;
     private String paymentStatus;
-
+    private Timestamp createdAt;
 
     public String getBookingID() {
         return bookingID;

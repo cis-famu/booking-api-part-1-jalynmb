@@ -21,6 +21,7 @@ public class Hotels {
     private String contactInformation;
     private double  rating;
     private String[] amenities;
+    private com.google.protobuf.Timestamp createdAt;
 
     public Hotels(String id, String hotelID, String userID, Double rating, String comment, Timestamp date) {
     }

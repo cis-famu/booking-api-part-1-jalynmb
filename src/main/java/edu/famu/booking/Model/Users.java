@@ -1,6 +1,7 @@
 package edu.famu.booking.Model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
+import com.google.protobuf.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,9 +19,11 @@ public class Users {
     private String phone; //Phone number of the user.
     private String address; //Address of the user.
     private PaymentInformation paymentInformation; //Payment information of the user, including card number, expiration date, and billing address.
+    private Timestamp createdAt;
 
-    public Users(String id, String name, String email, String phone, String address) {
+    public Users(String id, String name, String email, String phone, String address, Timestamp createdAt) {
     }
+
 
     public String getUserID() {
         return userID;
